@@ -5,3 +5,5 @@ set -o vi
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
+
+unset SSH_ASKPASS
