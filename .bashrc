@@ -23,6 +23,10 @@ if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
      source ~/.keychain/${HOSTNAME}-sh
 fi
 
+if [ -x /usr/bin/vim ]; then
+     alias vi='vim'
+fi
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
