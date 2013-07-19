@@ -8,7 +8,7 @@ alias gba="git branch -a"
 
 unset SSH_ASKPASS
 
-eval `dircolors ~/.util/dircolors.ansi-dark`
+eval `dircolors ~/.dir_colors`
 export PATH=~/bin:$PATH
 
 ## jump aliases
