@@ -56,3 +56,10 @@ if ${use_color} ; then
         alias ls='ls --color=auto'
         alias grep='grep --colour=auto'
 else
+        if [[ ${EUID} == 0 ]] ; then
+                # show root@ when we don't have colors
+                PS1='\u@\h \W \$ '
+        else
+                PS1='\u@\h \w \$ '
+        fi
+fi
