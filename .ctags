@@ -1,3 +1,8 @@
+--exclude=.svn
+--exclude=.git
+--extra=+qf
+--fields=+iaS
+--totals=yes
 --langdef=puppet
 --langmap=puppet:.pp
 --regex-puppet=/^class[ \t]*([:a-zA-Z0-9_\-]+)[ \t]*/\1/c,class/
