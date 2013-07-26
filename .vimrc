@@ -15,3 +15,6 @@ colorscheme solarized
 " don't clutter things up
 set nobackup
 set noswapfile
+
+set tags=./tags;
+set iskeyword+=:
