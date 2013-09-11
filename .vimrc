@@ -18,3 +18,7 @@ set noswapfile
 
 set tags=./tags;
 set iskeyword+=:
+
+au BufRead,BufNewFile *.json set filetype=json
+
+let g:syntastic_json_checkers=['jsonval']
