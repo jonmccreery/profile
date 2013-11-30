@@ -10,7 +10,7 @@ endif
 set expandtab
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme paintbox
 
 " don't clutter things up
 set nobackup
