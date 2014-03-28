@@ -1,0 +1,2 @@
+[alias]
+  tagcommit = !sh -c 'git rev-list $0 | head -n 1'
