@@ -29,6 +29,14 @@ if [ -x /usr/bin/vim ]; then
      alias vi='vim'
 fi
 
+case "$TERM" in
+xterm*|rxvt*)
+  PS1="\[\e]0;\W\a\]$PS1"
+  ;;
+*)
+  ;;
+esac
+
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -43,6 +51,33 @@ match_lhs=""
         && match_lhs=$(dircolors --print-database)
 [[ $'\n'${match_lhs} == *$'\n'"TERM "${safe_term}* ]] && use_color=true
 
+__repo () {
+    branch=$(type __git_ps1 &>/dev/null && __git_ps1 | sed -e "s/^ (//" -e "s/)$//")
+    if [ "$branch" != "" ]; then
+        vcs=git
+    else
+        branch=$(type -P hg &>/dev/null && hg branch 2>/dev/null)
+        if [ "$branch" != "" ]; then
+            vcs=hg
+        elif [ -e .bzr ]; then
+            vcs=bzr
+        elif [ -e .svn ]; then
+            vcs=svn
+        else
+            vcs=
+        fi
+    fi
+    if [ "$vcs" != "" ]; then
+        if [ "$branch" != "" ]; then
+            repo=$vcs:$branch
+        else
+            repo=$vcs
+        fi
+        echo -n "($repo)"
+    fi
+    return 0
+}
+
 if ${use_color} ; then
         # Enable colors for ls, etc.  Prefer ~/.dir_colors #64489
         if type -P dircolors >/dev/null ; then
@@ -53,19 +88,10 @@ if ${use_color} ; then
                 fi
         fi
 
-        if [[ ${EUID} == 0 ]] ; then
-                PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
-        else
-                PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] '
-        fi
+        PS1='\[\e[01;32m\]\u\[\e[00m\]:\[\e[01;34m\]\W\[\e[33m\]$(__repo)\[\e[00m\]\$ '
 
         alias ls='ls --color=auto'
         alias grep='grep --colour=auto'
 else
-        if [[ ${EUID} == 0 ]] ; then
-                # show root@ when we don't have colors
-                PS1='\u@\h \W \$ '
-        else
-                PS1='\u@\h \w \$ '
-        fi
+        PS1='\u@\h:\w$(__repo)\$ '
 fi
