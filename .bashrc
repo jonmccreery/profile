@@ -29,14 +29,6 @@ if [ -x /usr/bin/vim ]; then
      alias vi='vim'
 fi
 
-case "$TERM" in
-xterm*|rxvt*)
-  PS1="\[\e]0;\W\a\]$PS1"
-  ;;
-*)
-  ;;
-esac
-
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
 # instead of using /etc/DIR_COLORS.  Try to use the external file
@@ -88,7 +80,7 @@ if ${use_color} ; then
                 fi
         fi
 
-        PS1='\[\e[01;32m\]\u\[\e[00m\]:\[\e[01;34m\]\W\[\e[33m\]$(__repo)\[\e[00m\]\$ '
+        PS1='\[\e[01;32m\]\u\[\e[00m\]:\[\e[01;34m\]\w\[\e[33m\]$(__repo)\[\e[00m\]\$ '
 
         alias ls='ls --color=auto'
         alias grep='grep --colour=auto'
