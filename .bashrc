@@ -1,27 +1,18 @@
 WORKDIR=/srv/workspace
+export PATH=~/bin:$PATH
 
+# vi mode is cool
 set -o vi
 
+# global aliases
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
+if [ -x /usr/bin/vim ]; then
+  alias vi='vim'
+fi
 
-alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
-alias sspm1p='ssh root@spm1.prod.dc2.adpghs.com'
-alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
-
-alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
-alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
-alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
-
-alias cwp="cd $WORKDIR/puppet/adp_puppet"
-alias cwh="cd $WORKDIR/puppet/adp_hiera"
-
-unset SSH_ASKPASS
-
-eval `dircolors ~/.dir_colors`
-export PATH=~/bin:$PATH
-
+# adp specific
 if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   ## jump aliases
   alias sshtuk='ssh borg.cobaltgroup.com'
@@ -29,16 +20,27 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sshegp='ssh egpwhnms02.dswh.ds.adp.com'
   alias sshegs='ssh egswhnms02.dswh.ds.adp.com'
   alias sshdc2='ssh cobninf012.dsapp.dc2.dsghost.net'
+
+  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
+  alias sspm1p='ssh root@spm1.prod.dc2.adpghs.com'
+  alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
+
+  alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
+  alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
+  alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
+
+  alias cwp="cd $WORKDIR/puppet/adp_puppet"
+  alias cwh="cd $WORKDIR/puppet/adp_hiera"
+
+  # proxy, ftw
   export http_proxy=http://mccreej:Q2p0W3o9@ds-sea-px01.ds.ad.adp.com:8080
 fi
 
+# ssh management
 if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
   source ~/.keychain/${HOSTNAME}-sh
 fi
-
-if [ -x /usr/bin/vim ]; then
-  alias vi='vim'
-fi
+unset SSH_ASKPASS
 
 # Set colorful PS1 only on colorful terminals.
 # dircolors --print-database uses its own built-in database
