@@ -6,6 +6,12 @@ alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
 
+alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
+alias sspm1p='ssh root@spm1.prod.dc2.adpghs.com'
+alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
+alias cwp="cd $WORKDIR/puppet/adp_puppet"
+alias cwh="cd $WORKDIR/puppet/adp_hiera"
+
 unset SSH_ASKPASS
 
 eval `dircolors ~/.dir_colors`
