@@ -21,10 +21,19 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sshegs='ssh egswhnms02.dswh.ds.adp.com'
   alias sshdc2='ssh cobninf012.dsapp.dc2.dsghost.net'
 
+  # prod PM
   alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
   alias sspm1p='ssh root@spm1.prod.dc2.adpghs.com'
   alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
 
+  # integration PM
+  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
+  alias sppmi='ssh root@ppm.int.dc2.adpghs.com'
+  alias sspm1i='ssh root@spm1.int.dc2.adpghs.com'
+  alias sspm2i='ssh root@spm2.int.dc2.adpghs.com'
+
+  # develop PM
+  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
   alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
   alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
   alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
