@@ -42,7 +42,7 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias cwh="cd $WORKDIR/puppet/adp_hiera"
 
   # proxy, ftw
-  export http_proxy=http://mccreej:Q2p0W3o9@ds-sea-px01.ds.ad.adp.com:8080
+  export http_proxy=http://mccreej:S3p0D4o9@ds-sea-px01.ds.ad.adp.com:8080
 fi
 
 # ssh management
