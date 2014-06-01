@@ -8,6 +8,7 @@ set -o vi
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
+
 if [ -x /usr/bin/vim ]; then
   alias vi='vim'
 fi
@@ -37,6 +38,10 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
   alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
   alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
+
+  # lab PM
+  alias sppml='ssh root@ppm.lab.dc2.adpghs.com'
+  alias sspm1l='ssh root@spm1.lab.dc2.adpghs.com'
 
   alias cwp="cd $WORKDIR/puppet/adp_puppet"
   alias cwh="cd $WORKDIR/puppet/adp_hiera"
