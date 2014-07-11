@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/mnt/src/mine/profile/util/tmux-mem-cpu-load/luts.h
+/srv/workspace/code/profile/util/tmux-mem-cpu-load/luts.h
 
-/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load.cpp
+/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load.cpp
 cstring
 -
 fstream
@@ -48,5 +48,5 @@ sys/sysctl.h
 sys/types.h
 -
 luts.h
-/mnt/src/mine/profile/util/tmux-mem-cpu-load/luts.h
+/srv/workspace/code/profile/util/tmux-mem-cpu-load/luts.h
 

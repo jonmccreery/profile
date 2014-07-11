@@ -1,15 +1,15 @@
 # CMake generated Testfile for 
-# Source directory: /mnt/src/mine/profile/util/tmux-mem-cpu-load
-# Build directory: /mnt/src/mine/profile/util/tmux-mem-cpu-load
+# Source directory: /srv/workspace/code/profile/util/tmux-mem-cpu-load
+# Build directory: /srv/workspace/code/profile/util/tmux-mem-cpu-load
 # 
-# This file includes the relevant testing commands required for 
+# This file includes the relevent testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(usage "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "-h")
-set_tests_properties(usage PROPERTIES  WILL_FAIL "TRUE")
-add_test(no_arguments "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load")
-add_test(colors "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "--colors")
-add_test(arguments "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "--colors" "1" "4")
-add_test(invalid_status_interval "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "-1" "4")
-set_tests_properties(invalid_status_interval PROPERTIES  WILL_FAIL "TRUE")
-add_test(invalid_graph_lines "/mnt/src/mine/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "1" "-4")
-set_tests_properties(invalid_graph_lines PROPERTIES  WILL_FAIL "TRUE")
+ADD_TEST(usage "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "-h")
+SET_TESTS_PROPERTIES(usage PROPERTIES  WILL_FAIL "TRUE")
+ADD_TEST(no_arguments "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load")
+ADD_TEST(colors "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "--colors")
+ADD_TEST(arguments "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "--colors" "1" "4")
+ADD_TEST(invalid_status_interval "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "-1" "4")
+SET_TESTS_PROPERTIES(invalid_status_interval PROPERTIES  WILL_FAIL "TRUE")
+ADD_TEST(invalid_graph_lines "/srv/workspace/code/profile/util/tmux-mem-cpu-load/tmux-mem-cpu-load" "1" "-4")
+SET_TESTS_PROPERTIES(invalid_graph_lines PROPERTIES  WILL_FAIL "TRUE")

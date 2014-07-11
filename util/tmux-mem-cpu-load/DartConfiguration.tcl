@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /mnt/src/mine/profile/util/tmux-mem-cpu-load
-BuildDirectory: /mnt/src/mine/profile/util/tmux-mem-cpu-load
+SourceDirectory: /srv/workspace/code/profile/util/tmux-mem-cpu-load
+BuildDirectory: /srv/workspace/code/profile/util/tmux-mem-cpu-load
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: newton.internal
+Site: jump.ds.ad.adp.com
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -33,18 +33,17 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/local/bin/cmake" "/mnt/src/mine/profile/util/tmux-mem-cpu-load"
-MakeCommand: /usr/bin/gmake -i
+ConfigureCommand: "/usr/bin/cmake" "/srv/workspace/code/profile/util/tmux-mem-cpu-load"
+MakeCommand: /usr/bin/make -i
 DefaultCTestConfigurationType: Release
 
 # CVS options
 # Default is "-d -P -A"
-CVSCommand: /usr/bin/cvs
+CVSCommand: CVSCOMMAND-NOTFOUND
 CVSUpdateOptions: -d -A -P
 
 # Subversion options
 SVNCommand: /usr/bin/svn
-SVNOptions: 
 SVNUpdateOptions: 
 
 # Git options
@@ -52,17 +51,10 @@ GITCommand: /usr/bin/git
 GITUpdateOptions: 
 GITUpdateCustom: 
 
-# Perforce options
-P4Command: P4COMMAND-NOTFOUND
-P4Client: 
-P4Options: 
-P4UpdateOptions: 
-P4UpdateCustom: 
-
 # Generic update command
-UpdateCommand: /usr/bin/git
+UpdateCommand: 
 UpdateOptions: 
-UpdateType: git
+UpdateType: 
 
 # Compiler info
 Compiler: /usr/bin/c++

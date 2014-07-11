@@ -47,8 +47,8 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sppml='ssh root@ppm.lab.dc2.adpghs.com'
   alias sspm1l='ssh root@spm1.lab.dc2.adpghs.com'
 
-  alias cwp="cd $WORKDIR/puppet/adp_puppet"
-  alias cwh="cd $WORKDIR/puppet/adp_hiera"
+  alias cwp="cd $WORKDIR/puppet/puppet"
+  alias cwh="cd $WORKDIR/puppet/hiera"
 
   # proxy, ftw
   export http_proxy=http://mccreej:S3p0D4o9@ds-sea-px01.ds.ad.adp.com:8080
