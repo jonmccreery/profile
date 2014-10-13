@@ -19,6 +19,7 @@ fi
 
 # adp specific
 if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
+  
   ## jump aliases
   alias sshtuk='ssh borg.cobaltgroup.com'
   alias sshl3='ssh l3anms01.s1.networkphoneasp.com'
@@ -32,13 +33,11 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
 
   # integration PM
-  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
   alias sppmi='ssh root@ppm.int.dc2.adpghs.com'
   alias sspm1i='ssh root@spm1.int.dc2.adpghs.com'
   alias sspm2i='ssh root@spm2.int.dc2.adpghs.com'
 
   # develop PM
-  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
   alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
   alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
   alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
@@ -47,11 +46,18 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sppml='ssh root@ppm.lab.dc2.adpghs.com'
   alias sspm1l='ssh root@spm1.lab.dc2.adpghs.com'
 
+
+  alias sppmla='ssh root@ppm-a.lab.dc2.adpghs.com'
+  alias sppmlb='ssh root@ppm-b.lab.dc2.adpghs.com'
+  alias sppmlc='ssh root@ppm-c.lab.dc2.adpghs.com'
+  alias sppmld='ssh root@ppm-d.lab.dc2.adpghs.com'
+  alias sppmle='ssh root@ppm-e.lab.dc2.adpghs.com'
+
   alias cwp="cd $WORKDIR/puppet/puppet"
   alias cwh="cd $WORKDIR/puppet/hiera"
 
   # proxy, ftw
-  export http_proxy=http://mccreej:S3p0D4o9@ds-sea-px01.ds.ad.adp.com:8080
+  export http_proxy=http://mccreej:Z1p0X2o9@ds-sea-px01.ds.ad.adp.com:8080
 fi
 
 # ssh management
