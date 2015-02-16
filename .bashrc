@@ -53,11 +53,17 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   alias sppmld='ssh root@ppm-d.lab.dc2.adpghs.com'
   alias sppmle='ssh root@ppm-e.lab.dc2.adpghs.com'
 
+
+  # ORD
+  alias sppmo='ssh root@ppm.ord.dsghost.net'
+  alias sspm1o='ssh root@spm1.ord.dsghost.net'
+  alias sspm2o='ssh root@spm2.ord.dsghost.net'
+
   alias cwp="cd $WORKDIR/puppet/puppet"
   alias cwh="cd $WORKDIR/puppet/hiera"
 
   # proxy, ftw
-  export http_proxy=http://mccreej:Z1p0X2o9@ds-sea-px01.ds.ad.adp.com:8080
+  export http_proxy=http://mccreej:C3p0V4o9@ds-sea-px01.ds.ad.adp.com:8080
 fi
 
 # ssh management
