@@ -54,6 +54,8 @@ if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
   export http_proxy=http://mccreej:S3p0D4o9@ds-sea-px01.ds.ad.adp.com:8080
 fi
 
+
+
 # ssh management
 if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
   source ~/.keychain/${HOSTNAME}-sh
@@ -111,7 +113,7 @@ if ${use_color} ; then
     fi
   fi
 
-  PS1='\[\e[01;32m\]\u\[\e[00m\]:\[\e[01;34m\]\w\[\e[33m\]$(__repo)\[\e[00m\]\$ '
+  PS1='\[\e[01;32m\]\u@\H\[\e[00m\]:\[\e[01;34m\]\w\[\e[33m\]$(__repo)\[\e[00m\]\$ '
 
   alias ls='ls --color=auto'
   alias grep='grep --colour=auto'
