@@ -1,6 +1,6 @@
 [user]
-  name=McCreery, Jonathan (DS)
-  email=Jonathan.McCreery@adp.com
+  name=Jon McCreery
+  email=jwmccreery@gmail.com
 
 [alias]
   tagcommit = !sh -c 'git rev-list $0 | head -n 1'
