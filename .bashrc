@@ -17,57 +17,6 @@ if [ -x /usr/bin/vim ]; then
   alias vi='vim'
 fi
 
-# adp specific
-if [ $(hostname -f | sed -e 's/^[^\.]*\.\(.*\)$/\1/') = "ds.ad.adp.com" ]; then
-  
-  ## jump aliases
-  alias sshtuk='ssh borg.cobaltgroup.com'
-  alias sshl3='ssh l3anms01.s1.networkphoneasp.com'
-  alias sshegp='ssh egpwhnms02.dswh.ds.adp.com'
-  alias sshegs='ssh egswhnms02.dswh.ds.adp.com'
-  alias sshdc2='ssh cobninf012.dsapp.dc2.dsghost.net'
-
-  # prod PM
-  alias sppmp='ssh root@ppm.prod.dc2.adpghs.com'
-  alias sspm1p='ssh root@spm1.prod.dc2.adpghs.com'
-  alias sspm2p='ssh root@spm2.prod.dc2.adpghs.com'
-
-  # integration PM
-  alias sppmi='ssh root@ppm.int.dc2.adpghs.com'
-  alias sspm1i='ssh root@spm1.int.dc2.adpghs.com'
-  alias sspm2i='ssh root@spm2.int.dc2.adpghs.com'
-
-  # develop PM
-  alias sppmd='ssh root@ppm.dev.dc2.adpghs.com'
-  alias sspm1d='ssh root@spm1.dev.dc2.adpghs.com'
-  alias sspm2d='ssh root@spm2.dev.dc2.adpghs.com'
-
-  # lab PM
-  alias sppml='ssh root@ppm.lab.dc2.adpghs.com'
-  alias sspm1l='ssh root@spm1.lab.dc2.adpghs.com'
-
-
-  alias sppmla='ssh root@ppm-a.lab.dc2.adpghs.com'
-  alias sppmlb='ssh root@ppm-b.lab.dc2.adpghs.com'
-  alias sppmlc='ssh root@ppm-c.lab.dc2.adpghs.com'
-  alias sppmld='ssh root@ppm-d.lab.dc2.adpghs.com'
-  alias sppmle='ssh root@ppm-e.lab.dc2.adpghs.com'
-
-
-  # ORD
-  alias sppmo='ssh root@ppm.ord.dsghost.net'
-  alias sspm1o='ssh root@spm1.ord.dsghost.net'
-  alias sspm2o='ssh root@spm2.ord.dsghost.net'
-
-  alias cwp="cd $WORKDIR/puppet/puppet"
-  alias cwh="cd $WORKDIR/puppet/hiera"
-
-  # proxy, ftw
-  export http_proxy=http://mccreej:C3p0V4o9@ds-sea-px01.ds.ad.adp.com:8080
-fi
-
-
-
 # ssh management
 if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
   source ~/.keychain/${HOSTNAME}-sh
