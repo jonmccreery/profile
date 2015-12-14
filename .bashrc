@@ -12,10 +12,16 @@ alias gba="git branch -a"
 # strip ansi escape sequences from an input stream
 alias stresc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 
-
 if [ -x /usr/bin/vim ]; then
   alias vi='vim'
 fi
+
+# RVM if RVM exists
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+# rbenv if rbenv exists
+[[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"; eval "$(rbenv init -)"
+
 
 # ssh management
 if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
