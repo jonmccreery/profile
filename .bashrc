@@ -22,6 +22,12 @@ fi
 # rbenv if rbenv exists
 [[ -d ~/.rbenv ]] && export PATH="$HOME/.rbenv/bin:$PATH"; eval "$(rbenv init -)"
 
+# getty aliases
+alias seap1='ssh s-jmccreery@sea-prod-puppet-master-01.amer.gettywan.com'
+alias seap2='ssh s-jmccreery@sea-prod-puppet-master-02.amer.gettywan.com'
+alias seap3='ssh s-jmccreery@sea-prod-puppet-master-03.amer.gettywan.com'
+
+alias ashp1='ssh s-jmccreery@ash-prod-puppet-master-01.amer.gettywan.com'
 
 # ssh management
 if [ -f ~/.keychain/${HOSTNAME}-sh  ]; then
