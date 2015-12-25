@@ -13,3 +13,4 @@ cp -f .git-prompt.sh ~
 cp -rf .vim ~
 cp -rf .keychain ~
 cp -rf bin ~
+cp -rf .rbenv ~
