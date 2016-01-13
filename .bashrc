@@ -9,6 +9,14 @@ alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
 
+# GETTY ALIASES
+alias sseap='ssh s-jmccreery@sea-prod-puppet-master-01.amer.gettywan.com'
+alias sseap1='ssh s-jmccreery@sea-prod-puppet-master-01.amer.gettywan.com'
+alias sseap2='ssh s-jmccreery@sea-prod-puppet-master-02.amer.gettywan.com'
+alias sseap3='ssh s-jmccreery@sea-prod-puppet-master-03.amer.gettywan.com'
+alias sashp1='ssh s-jmccreery@ash-prod-puppet-master-01.amer.gettywan.com'
+
+
 # strip ansi escape sequences from an input stream
 alias stresc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
 
