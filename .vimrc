@@ -27,7 +27,7 @@ let g:syntastic_json_checkers=['jsonval']
 
 " puppet support
 au FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
-au FileType puppet setl autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2 colorcolumn=81
+au FileType puppet setl autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " fire up NERDTree if there's no file given on the command line
 autocmd vimenter * if !argc() | NERDTree | endif
