@@ -4,6 +4,9 @@ export PATH=~/bin:$PATH
 # vi mode is cool
 set -o vi
 
+# checkwinsize makes resizing windows work
+shopt -s checkwinsize
+
 # global aliases
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
