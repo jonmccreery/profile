@@ -11,6 +11,7 @@ shopt -s checkwinsize
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
+alias vi='vim'
 
 # strip ansi escape sequences from an input stream
 alias stresc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
