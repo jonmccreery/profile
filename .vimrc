@@ -12,7 +12,7 @@ set shiftwidth=2
 set expandtab
 syntax on
 set background=dark
-colorscheme paintbox
+colorscheme symfony
 
 " don't clutter things up
 set nobackup
