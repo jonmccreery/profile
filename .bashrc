@@ -11,6 +11,7 @@ shopt -s checkwinsize
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
 alias gba="git branch -a"
+alias gca="git commit -a -m"
 alias vi='vim'
 
 # strip ansi escape sequences from an input stream
