@@ -11,6 +11,7 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set encoding=utf-8
+set number
 syntax on
 set background=dark
 colorscheme symfony
@@ -19,7 +20,6 @@ colorscheme symfony
 set nobackup
 set noswapfile
 
-set tags=./tags;
 set iskeyword+=:
 
 " json support
@@ -40,11 +40,13 @@ nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
 
+" ctags support
+set tags=./tags;
 nmap <F8> :TagbarToggle<CR>
 
 let g:tagbar_type_typescript = {
-  \ 'ctagstype': 'typescript',
-  \ 'kinds': [
+    \ 'ctagstype': 'typescript',
+    \ 'kinds': [
     \ 'c:classes',
     \ 'n:modules',
     \ 'f:functions',
