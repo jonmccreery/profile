@@ -1,0 +1,9 @@
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/ICSharpCode.NRefactory.Cecil.dll.mdb
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/ICSharpCode.NRefactory.Cecil.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/obj/Release/ICSharpCode.NRefactory.Cecil.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/obj/Release/ICSharpCode.NRefactory.Cecil.dll.mdb
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/ICSharpCode.NRefactory.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/ICSharpCode.NRefactory.xml
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/Mono.Cecil.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.Cecil/bin/Release/Mono.Cecil.dll.mdb

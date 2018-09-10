@@ -1,0 +1,1 @@
+{"rustc":12386023685183185645,"features":"[]","target":11182017718830047250,"profile":4526152405984878336,"path":15254226393327548215,"deps":[["iron v0.4.0","iron",9843083131522339101],["route-recognizer v0.1.12","route_recognizer",4896297096220112658]],"local":[{"Precalculated":"0.2.0"}],"rustflags":[],"edition":"Edition2015"}

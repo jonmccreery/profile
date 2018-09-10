@@ -1,0 +1,5 @@
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil/obj/net_4_0_Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil/bin/net_4_0_Release/Mono.Cecil.dll.mdb
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil/bin/net_4_0_Release/Mono.Cecil.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil/obj/net_4_0_Release/Mono.Cecil.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil/obj/net_4_0_Release/Mono.Cecil.dll.mdb

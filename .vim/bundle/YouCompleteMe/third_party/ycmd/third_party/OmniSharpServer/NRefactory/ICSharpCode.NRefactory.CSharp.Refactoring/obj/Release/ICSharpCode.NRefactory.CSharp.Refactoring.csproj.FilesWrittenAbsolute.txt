@@ -1,0 +1,3 @@
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/bin/Release/ICSharpCode.NRefactory.CSharp.Refactoring.dll
+/home/vagrant/.vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory/ICSharpCode.NRefactory.CSharp.Refactoring/obj/Release/ICSharpCode.NRefactory.CSharp.Refactoring.dll
