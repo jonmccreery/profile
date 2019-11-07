@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -x
 # files
 cp -f .tmux.conf ~
 cp -f .bashrc ~

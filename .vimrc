@@ -14,7 +14,7 @@ set encoding=utf-8
 set number
 syntax on
 set background=dark
-colorscheme symfony
+colorscheme solarized
 
 " don't clutter things up
 set nobackup
@@ -33,12 +33,38 @@ au FileType puppet setl autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=
 " fire up NERDTree if there's no file given on the command line
 autocmd vimenter * if !argc() | NERDTree | endif
 let NERDTreeShowHidden=1
-let NERDTreeDirArrows=0
+let NERDTreeDirArrows=1
+
+let g:python_hightlight_all = 1
 
 nmap <silent> <C-Up> :wincmd k<CR>
 nmap <silent> <C-Down> :wincmd j<CR>
 nmap <silent> <C-Left> :wincmd h<CR>
 nmap <silent> <C-Right> :wincmd l<CR>
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" left over from dabbling with syntastic + pylint
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" teach vim some highlightings
+augroup vagrant
+  au!
+  au BufRead,BufNewFile Vagrantfile set filetype=ruby
+augroup END
+
+" if NERDTree is the only split open, exit
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
 " ctags support
 set tags=./tags;
