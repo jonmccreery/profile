@@ -1,8 +1,10 @@
 #!/bin/bash
-
 set -x
+
+# tmux
+cp -rf tmux/.* ~
+
 # files
-cp -f .tmux.conf ~
 cp -f .bashrc ~
 cp -f .vimrc ~
 cp -f .dir_colors_trapd00r ~/.dir_colors
