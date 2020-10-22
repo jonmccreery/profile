@@ -100,3 +100,5 @@ fi
 export PATH="/home/jmccreer/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+eval "$(ssh-agent)"
