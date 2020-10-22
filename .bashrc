@@ -10,9 +10,10 @@ shopt -s checkwinsize
 # global aliases
 alias ll='ls -la'
 alias cw="cd $WORKDIR"
+alias vi='vim'
+
 alias gba="git branch -a"
 alias gca="git commit -a -m"
-alias vi='vim'
 
 # strip ansi escape sequences from an input stream
 alias stresc='sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'
@@ -95,3 +96,7 @@ if ${use_color} ; then
 else
   PS1='\u@\h:\w$(__repo)\$ '
 fi
+
+export PATH="/home/jmccreer/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

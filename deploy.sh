@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+# try to impose some sanity of the beast that is python
+bin/python_configurator.sh
+
 # tmux
 cp -rf tmux/.* ~
 
