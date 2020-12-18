@@ -4,6 +4,10 @@ execute pathogen#infect()
 filetype plugin indent on
 if has("mouse")
   set mouse=a
+
+  " with out this, mount dragging splits doesn't work... just selects the split
+  " ascii art
+  set ttymouse=xterm2
 endif
 
 " aesthetics matters
@@ -16,64 +20,57 @@ syntax on
 set background=dark
 colorscheme solarized
 
-" don't clutter things up
+" keep the filesystem clean
 set nobackup
 set noswapfile
 
+" ???
 set iskeyword+=:
 
-" with out this, mount dragging splits doesn't work... just selects the split
-" ascii art
-set ttymouse=xterm2
-
-" json support
-au BufRead,BufNewFile *.json set filetype=json
-let g:syntastic_json_checkers=['jsonval']
-
-" puppet support
-au FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
-au FileType puppet setl autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2
-
-" fire up NERDTree if there's no file given on the command line
-autocmd vimenter * if !argc() | NERDTree | endif
-let NERDTreeShowHidden=1
-let NERDTreeDirArrows=1
-
+" :::::::: language support ::::::::::::
 let g:python_hightlight_all = 1
 
-nmap <silent> <C-Up> :wincmd k<CR>
-nmap <silent> <C-Down> :wincmd j<CR>
-nmap <silent> <C-Left> :wincmd h<CR>
-nmap <silent> <C-Right> :wincmd l<CR>
-
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-
-" left over from dabbling with syntastic + pylint
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-
-" teach vim some highlightings
+" vagrant
 augroup vagrant
   au!
   au BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
 
+" puppet
+au FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
+au FileType puppet setl autoindent tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" json support
+au BufRead,BufNewFile *.json set filetype=json
+let g:syntastic_json_checkers=['jsonval']
+
+" :::::::: NERDTree ::::::::::::::
+" fire up NERDTree if there's no file given on the command line
+autocmd vimenter * if !argc() | NERDTree | endif
+let NERDTreeShowHidden=1
+let NERDTreeDirArrows=1
+
 " if NERDTree is the only split open, exit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif 
 
+" ::::::::  UI :::::::::::
+nmap <silent> <C-Up> :wincmd k<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Right> :wincmd l<CR>
+
+" map splits nagivation
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" ::::::::::: tagging ::::::::::
 " ctags support
 set tags=./tags;
-nmap <F8> :TagbarToggle<CR>
 
+" and tagbar
+nmap <F8> :TagbarToggle<CR>
 let g:tagbar_type_typescript = {
     \ 'ctagstype': 'typescript',
     \ 'kinds': [
@@ -88,36 +85,11 @@ let g:tagbar_type_typescript = {
   \ ]
 \ }
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
-" This file contains some boilerplate settings for vim's cscope interface,
-" plus some keyboard mappings that I've found useful.
-"
-" USAGE: 
-" -- vim 6:     Stick this file in your ~/.vim/plugin directory (or in a
-"               'plugin' directory in some other directory that is in your
-"               'runtimepath'.
-"
-" -- vim 5:     Stick this file somewhere and 'source cscope.vim' it from
-"               your ~/.vimrc file (or cut and paste it into your .vimrc).
-"
-" NOTE: 
-" These key maps use multiple keystrokes (2 or 3 keys).  If you find that vim
-" keeps timing you out before you can complete them, try changing your timeout
-" settings, as explained below.
-"
-" Happy cscoping,
-"
-" Jason Duell       jduell@alumni.princeton.edu     2002/3/7
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
+" STOLEN X-: 
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim... 
 if has("cscope")
-
     """"""""""""" Standard cscope/vim boilerplate
-
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set cscopetag
 
@@ -135,7 +107,6 @@ if has("cscope")
 
     " show msg when any other cscope db added
     set cscopeverbose  
-
 
     """"""""""""" My cscope/vim key mappings
     "
@@ -169,13 +140,10 @@ if has("cscope")
     " 'time.h', and not 'sys/time.h', etc. (by default cscope will return all
     " files that contain 'time.h' as part of their name).
 
-
     " To do the first type of search, hit 'CTRL-\', followed by one of the
     " cscope search types above (s,g,c,t,e,f,i,d).  The result of your cscope
     " search will be displayed in the current window.  You can use CTRL-T to
     " go back to where you were before the search.  
-    "
-
     nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
     nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>  
     nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>  
@@ -185,7 +153,6 @@ if has("cscope")
     nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>  
 
-
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
     " the new window.
@@ -193,7 +160,6 @@ if has("cscope")
     " (Note: earlier versions of vim may not have the :scs command, but it
     " can be simulated roughly via:
     "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>  
-
     nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR> 
     nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR> 
     nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR> 
@@ -203,13 +169,11 @@ if has("cscope")
     nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
     nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR> 
 
-
     " Hitting CTRL-space *twice* before the search type does a vertical 
     " split instead of a horizontal one (vim 6 and up only)
     "
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
-
     nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
@@ -218,7 +182,6 @@ if has("cscope")
     nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR> 
     nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR> 
     nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
-
 
     """"""""""""" key map timeouts
     "
@@ -247,5 +210,15 @@ if has("cscope")
     " timeoutlent (default: 1000 = 1 second, which is sluggish) is used.
     "
     "set ttimeoutlen=100
-
 endif
+
+" left over from dabbling with syntastic + pylint
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
