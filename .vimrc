@@ -22,6 +22,10 @@ set noswapfile
 
 set iskeyword+=:
 
+" with out this, mount dragging splits doesn't work... just selects the split
+" ascii art
+set ttymouse=xterm2
+
 " json support
 au BufRead,BufNewFile *.json set filetype=json
 let g:syntastic_json_checkers=['jsonval']
