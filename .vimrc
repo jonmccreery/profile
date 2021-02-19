@@ -10,6 +10,9 @@ if has("mouse")
   set ttymouse=xterm2
 endif
 
+" moar fssssst!!!
+set ttyfast
+
 " aesthetics matters
 set tabstop=2
 set shiftwidth=2
